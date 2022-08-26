@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { data } from '../core/errors.message';
 import { RequestsService } from '../core/requests.service';
 import { TokenInfo } from '../interfaces';
-import { nameValidator } from '../shared/nameValidator';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private requests: RequestsService,
     private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      username: ['', nameValidator],
+      username: '',
       password: ''
     })
   }
